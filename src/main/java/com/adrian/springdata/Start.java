@@ -20,19 +20,18 @@ public class Start {
 
     @EventListener(ApplicationReadyEvent.class)
     public void run() {
-
-        /* Car car1 = new Car("Toyota", "Najnowszy", Color.BLUE);
+         Car car1 = new Car("Toyota", "Najnowszy", Color.BLUE);
         carRepository.save(car1);
 
         Car car2 = new Car("Fiat", "F1", Color.BLACK);
         carRepository.save(car2);
 
         Car car3 = new Car("Opel", "O2", Color.RED);
-        carRepository.save(car3); */
+        carRepository.save(car3);
 
-        carRepository.deleteById(1L);
+        // carRepository.deleteById(1L);
 
-        List<Car> cars = carRepository.findAll();
+        List<Car> cars = carRepository.findAllByColor(Color.BLACK);
 
         cars.forEach(System.out::println);
     }
